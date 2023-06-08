@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Noto+Sans+KR:wght@300;400;700&display=swap");
+header {
+  font-family: "Kanit", sans-serif;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgb(28, 78, 136);
+}
+
+.list-wrap {
+  width: 100%;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.list-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+table {
+  width: 100%;
+  min-width: 900px;
+}
+table tr {
+  color: #000;
+}
+table tr td {
+  vertical-align: middle;
+}
+
+.thead .header {
+  font-family: "Kanit", sans-serif;
+  height: 60px;
+  line-height: 60px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgb(28, 78, 136);
+}
+.thead .table-sticky {
+  height: 50px;
+}
+.thead .table-sticky th {
+  background: rgb(64, 121, 185);
+  color: #fff;
+  vertical-align: middle;
+  position: sticky;
+  top: 0;
+}
+
+.tbody tr {
+  height: 100px;
+  border-bottom: 1px solid #d6d6d6;
+}/*# sourceMappingURL=main.css.map */
