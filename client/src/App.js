@@ -4,17 +4,28 @@ import './App.css';
 import './main.css';
 import Employee from './components/Employee';
 import { useEffect, useState } from 'react';
+import Loading from './Loading';
+
 
 function App() {
   const [employees,setEmployees] = useState([]);
-  
+  // api 로딩처리
+  const [loading, setLoading] = useState(null);
+
+
   useEffect(() => {
     // 3. callApi함수를 실행하고 useState로 employee값 변경
+    setLoading(true); // api 호출 전에 true로 변경하여 로딩화면 출력
+
     callApi()
-      .then(res => setEmployees(res))
+      .then(res => {
+        setEmployees(res)
+        // api 호출이 완료되면 false로 값 변경하여 숨김
+        setLoading(false)
+      })
       // 에러발생시 콘솔출력
       .catch(err => console.log(err));
-  });
+  }, []);
   
   const callApi = async () => {
     // 1. /api/customers 경로로접근
@@ -63,7 +74,7 @@ function App() {
                     />    
                   )
                   // employees의 값이 없으면 공백 출력
-                }) : ""
+                }) : <Loading/>
               }
           </tbody>
         </table>
