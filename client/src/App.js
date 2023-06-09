@@ -3,262 +3,27 @@ import './reset.css';
 import './App.css';
 import './main.css';
 import Employee from './components/Employee';
-
-const employee = [
-  {
-    'id': 1,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 2,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-  {
-    'id': 3,
-    'image': 'https://placeimg.com/64/64/any',
-    'name': '홍길동',
-    'birthday': '930924',
-    'gender': '남자',
-    'job': '개발자',
-    'position': '대리',
-    'joinDate': '20220303'
-  },
-]
-
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [employees,setEmployees] = useState([]);
+  
+  useEffect(() => {
+    // 3. callApi함수를 실행하고 useState로 employee값 변경
+    callApi()
+      .then(res => setEmployees(res))
+      // 에러발생시 콘솔출력
+      .catch(err => console.log(err));
+  });
+  
+  const callApi = async () => {
+    // 1. /api/customers 경로로접근
+    const response = await fetch('/api/employees');
+    // 2. 해당경로의 json데이터를 body에 담기
+    const body = await response.json();
+    return body;
+  }
+
   return (
     <div className="App">
       <div className='list-wrap'>
@@ -282,7 +47,8 @@ function App() {
           </thead>
           <tbody className='tbody'>
               {
-                employee.map(c => {
+                // employees의 값이 있을때 테이블 출력
+                employees ? employees.map(c => {
                   return (
                     <Employee
                       key={c.id}
@@ -296,7 +62,8 @@ function App() {
                       joinDate={c.joinDate}
                     />    
                   )
-                })
+                  // employees의 값이 없으면 공백 출력
+                }) : ""
               }
           </tbody>
         </table>

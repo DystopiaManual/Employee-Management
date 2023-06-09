@@ -10,17 +10,29 @@ header {
     color: rgb(28, 78, 136);
 }
 .list-wrap {
+    position: relative;
     width: 100%;
     height: 100vh;
-    overflow-x: auto; 
-    overflow-y: auto;
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+    background-color: #fff;
     font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: auto;
+    // overflow-y: hidden;
 }
 .list-wrap::-webkit-scrollbar {
-    display: none;
+    background-color: #fff;
+    width: 0px;
+    height: 10px;
+    border-radius: 50px;
 }
+.list-wrap::-webkit-scrollbar-thumb {
+    background-clip:padding box;
+    border-radius: 16px;
+    background: rgb(112, 112, 112); /* 스크롤바의 색상 */
+    background-clip: padding-box;
+    border: 2px solid #fff;
+    border-radius: 16px;
+}
+
 table {
     width: 100%;
     min-width: 900px;
@@ -46,9 +58,8 @@ table {
             background: rgb(64, 121, 185);
             color: #fff;
             vertical-align: middle;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
+            // position: sticky;
+            // top: 0;
         }
     }   
 }
