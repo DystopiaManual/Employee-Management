@@ -1,8 +1,5 @@
 {
     "_comment" : "주석: 데이터베이스 접속을 하기 위한 json파일",
-    "host" : "management-system.cf6qkwsoiwbi.ap-northeast-2.rds.amazonaws.com",
-    "user" : "user",
-    "password": "alcls1352",
     "port": "3306",
     "database": "management"
 }
