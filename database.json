@@ -1,5 +1,0 @@
-{
-    "_comment" : "주석: 데이터베이스 접속을 하기 위한 json파일",
-    "port": "3306",
-    "database": "management"
-}
