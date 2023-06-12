@@ -65,12 +65,12 @@ function App() {
                       key={c.id}
                       id={c.id}
                       image={c.image}
-                      name={c.name}
+                      NAME={c.NAME}
                       birthday={c.birthday}
                       gender={c.gender}
                       job={c.job}
-                      position={c.position}
-                      joinDate={c.joinDate}
+                      POSITION={c.POSITION}
+                      joindate={c.joindate}
                     />    
                   )
                   // employees의 값이 없으면 공백 출력
