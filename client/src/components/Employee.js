@@ -1,10 +1,21 @@
 import React, { useEffect } from 'react'
+import moment from 'moment/moment';
+
 
 function Employee(props) {
   console.log(props.joindate); // joindate를 콘솔에 출력
+
+  const moment = require('moment-timezone');
   const jd = props.joindate;  
-  const dateResult = jd.substr(0, 10);
-  console.log(jd.substr(0, 10)); // 불필요 영역 자르기
+  const dateInUS = moment(jd);
+
+  // 미국시간을 한국시간으로 변경
+  const dateInKR = dateInUS.tz('Asia/Seoul');
+  const krTime = dateInKR.format();
+
+  // 불필요 영역 자르기
+  const dateResult = krTime.substr(0, 10);
+  console.log(dateResult); 
   return (
     <tr className='employee-info'>
         <td>{props.id}</td>

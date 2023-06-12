@@ -5,7 +5,7 @@ import './main.css';
 import Employee from './components/Employee';
 import { useEffect, useState } from 'react';
 import Loading from './Loading';
-
+import EmployeeAdd from './components/EmployeeAdd';
 
 function App() {
   const [employees,setEmployees] = useState([]);
@@ -27,6 +27,16 @@ function App() {
       .catch(err => console.log(err));
   }, []);
   
+  const stateRefresh = () => {
+    setEmployees([])
+    callApi()
+      .then(res => {
+        setEmployees(res)        
+        setLoading(false)
+      })
+      .catch(err => console.log(err));
+  }
+
   const callApi = async () => {
     // 1. /api/customers 경로로접근
     const response = await fetch('/api/employees');
@@ -52,7 +62,7 @@ function App() {
               <th>생년월일</th>
               <th>성별</th>
               <th>직무</th>
-              <th>직급</th>
+              <th>직위</th>
               <th>입사일</th>
             </tr>
           </thead>
@@ -78,6 +88,7 @@ function App() {
               }
           </tbody>
         </table>
+        <EmployeeAdd stateRefresh={stateRefresh}/>
       </div>
     </div>
   );
