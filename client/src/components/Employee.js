@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import moment from 'moment/moment';
-
+import EmployeeDelete from './EmployeeDelete';
 
 function Employee(props) {
-  console.log(props.joindate); // joindate를 콘솔에 출력
 
   const moment = require('moment-timezone');
   const jd = props.joindate;  
@@ -26,6 +25,7 @@ function Employee(props) {
         <td>{props.job}</td>
         <td>{props.POSITION}</td>
         <td>{dateResult}</td>
+        <td><EmployeeDelete id={props.id} stateRefresh={props.stateRefresh}/></td>
     </tr>
   )
 }

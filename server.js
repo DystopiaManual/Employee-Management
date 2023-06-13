@@ -23,10 +23,10 @@ connection.connect();
 const multer = require('multer');
 const upload = multer({dest: './upload'})
 
-
+// 모든 사원 데이터 가져오기
 app.get('/api/employees', (req,res) => {
     connection.query(
-      "SELECT * FROM EMPLOYEE",
+      "SELECT * FROM EMPLOYEE WHERE isDeleted = 0",
       (err, rows, fields) => {
         res.send(rows);
       }
@@ -35,8 +35,9 @@ app.get('/api/employees', (req,res) => {
 
 app.use('/image', express.static('./upload'));
 
+// 사원 데이터생성
 app.post('/api/employees', upload.single('image'), (req, res) => {
-  let sql = 'INSERT INTO EMPLOYEE VALUES(null, ?, ?, ?, ?, ?, ?, ?)';
+  let sql = 'INSERT INTO EMPLOYEE VALUES(null, ?, ?, ?, ?, ?, ?, ?, now(), 0)';
   let image = 'http://localhost:5000/image/' + req.file.filename;
   let NAME = req.body.NAME;
   let birthday = req.body.birthday;
@@ -62,5 +63,19 @@ app.post('/api/employees', upload.single('image'), (req, res) => {
     }
     )
 });
+// 사원 데이터삭제
+app.delete('/api/employees/:id', (req, res) => {
+  let sql = 'UPDATE EMPLOYEE SET isDeleted = 1 WHERE id = ?';
+  let params = [req.params.id];
+  connection.query(sql, params, (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+      res.status(500).json({ error: 'Internal server error' });
+    } else {
+      res.json(rows);
+    }
+  });
+});
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

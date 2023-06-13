@@ -32,7 +32,6 @@ function App() {
     callApi()
       .then(res => {
         setEmployees(res)        
-        setLoading(false)
       })
       .catch(err => console.log(err));
   }
@@ -51,7 +50,7 @@ function App() {
         <table>
           <thead className='thead'>
             <tr className='header'>
-              <th colSpan={8}>
+              <th colSpan={9}>
                 MANAGEMENT SYSTEM
               </th>
             </tr>
@@ -64,6 +63,7 @@ function App() {
               <th>직무</th>
               <th>직위</th>
               <th>입사일</th>
+              <th>설정</th>
             </tr>
           </thead>
           <tbody className='tbody'>
@@ -81,6 +81,7 @@ function App() {
                       job={c.job}
                       POSITION={c.POSITION}
                       joindate={c.joindate}
+                      stateRefresh={stateRefresh}
                     />    
                   )
                   // employees의 값이 없으면 공백 출력
