@@ -58,8 +58,9 @@ table {
             background: rgb(64, 121, 185);
             color: #fff;
             vertical-align: middle;
-            // position: sticky;
-            // top: 0;
+            position: sticky;
+            top: 0;
+            z-index: 2;
         }
     }   
 }
@@ -84,4 +85,8 @@ table {
 }
 .select-style {
     margin-top: 30px;
+}
+.delete-name {
+    font-weight: bold;
+    font-size: 800;
 }

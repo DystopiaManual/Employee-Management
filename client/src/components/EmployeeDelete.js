@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
-
+import { Dialog, DialogActions, DialogTitle, DialogContent, Button, Typography } from '@mui/material';
 
 function EmployeeDelete(props) {
     
-    const { stateRefresh, id } = props;
+    const { stateRefresh, id, name } = props;
+    const [open, setOpen] = useState(false);
+    const handleClickOpen = () => {
+      setOpen(true)
+    }
+    const handleClose = () => {
+      setOpen(false)
+    }
 
     const deleteEmployee = (id) => {
       const url = '/api/employees/' + id;
@@ -25,7 +32,23 @@ function EmployeeDelete(props) {
     }
 
   return (
-    <button onClick={() => handleDeleteClick(id)}>삭제</button>
+    <div>
+      <Button style={{ zIndex: 0 }} variant='contained' onClick={handleClickOpen}>삭제</Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle onClose={handleClose}>
+          사원정보 삭제
+        </DialogTitle>
+        <DialogContent>
+          <Typography gutterBottom>
+            <span className='delete-name'>{name}</span> 님을 정말 삭제하시겠습니까?
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button variant='contained' onClick={(e) => {deleteEmployee(id)}}>예</Button>
+          <Button variant='outlined' onClick={handleClose}>취소</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
   )
 }
 

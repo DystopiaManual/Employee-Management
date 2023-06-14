@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import axios from 'axios';
 import { useState } from 'react';
-import { Dialog, MenuItem, createTheme, tabClasses } from '@mui/material';
+import { Dialog, DialogActions, MenuItem, createTheme, tabClasses } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import { DialogContent } from '@mui/material';
 import { TextField } from '@mui/material';
@@ -29,6 +29,9 @@ const useStyles = makeStyles(theme => ({
     left: '50%',
     transform: 'translateX(-50%)',
   },
+  btnDesign: {
+    width: '50%'
+  }
 }))
 
 function EmployeeAdd(props) {
@@ -193,8 +196,10 @@ function EmployeeAdd(props) {
                      ></input><br/>
           </div>
         </DialogContent>
+        <DialogActions>
           <Button sx={{ margin: '6px'}} className={classes.btnDesign} variant='contained' color='primary' onClick={handleFormSubmit}>추가</Button>
           <Button sx={{ margin: '6px'}} className={classes.btnDesign} variant='outlined' color='primary' onClick={handleClose}>닫기</Button>
+        </DialogActions>
       </Dialog>
     </div>
   )

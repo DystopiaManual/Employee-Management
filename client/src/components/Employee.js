@@ -25,7 +25,7 @@ function Employee(props) {
         <td>{props.job}</td>
         <td>{props.POSITION}</td>
         <td>{dateResult}</td>
-        <td><EmployeeDelete id={props.id} stateRefresh={props.stateRefresh}/></td>
+        <td><EmployeeDelete name={props.NAME} id={props.id} stateRefresh={props.stateRefresh}/></td>
     </tr>
   )
 }
